@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  //colors
+  --color-white: #fff;
+  --color-black: #333;
+  --color-red-500: #c0392b;
+  --color-green-500: #27ae60;
+  --color-blue-500: #2980b9;
+
+  //border
+  --border-rounded: 0.5rem;
+}
+
+@import "./components/btn.scss";
