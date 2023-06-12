@@ -1,0 +1,15 @@
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 37.5em) {
+    padding: 0 2rem;
+  }
+
+  &--md {
+    max-width: 64rem;
+  }
+  &--sm {
+    max-width: 48rem;
+  }
+}
