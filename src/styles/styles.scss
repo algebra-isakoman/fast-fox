@@ -12,9 +12,13 @@ body {
   --color-black: #333;
   --color-gray-300: #ccc;
   --color-gray-500: #999;
+  --color-gray-800-25: rgba(75, 75, 75, 0.25);
   --color-red-500: #c0392b;
+  --color-red-600: #aa2a1c;
   --color-green-500: #27ae60;
+  --color-green-600: #158f48;
   --color-blue-500: #2980b9;
+  --color-blue-500: #136297;
 
   //border
   --border-rounded: 0.5rem;
@@ -24,3 +28,4 @@ body {
 @import "./components/container.scss";
 @import "./components/devider.scss";
 @import "./components/input.scss";
+@import "./components/modal.scss";

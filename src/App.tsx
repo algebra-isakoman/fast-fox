@@ -5,6 +5,7 @@ import Button from "./components/button";
 import Container from "./components/container";
 import Devider from "./components/devider";
 import Input from "./components/input";
+import Modal from "./components/modal";
 import "./styles/styles.scss";
 
 type ValuesType = {
@@ -19,6 +20,8 @@ const obj: ValuesType = {
 function App() {
   const [inputsValue, setInputsValue] = useState<ValuesType>(obj);
   const [newState, setNewState] = useState<string>("");
+  //State koji nam služi za upravljanje modalom (drži state jeli nam je modal otvoren ili zatvoren)
+  const [modal, setModal] = useState<boolean>(false);
 
   const handleInputsValue = (value: string, id: string) => {
     const newState: ValuesType = { ...inputsValue };
@@ -53,7 +56,20 @@ function App() {
           value={newState}
           onChange={(value: string) => setNewState(value)}
         />
-        <button onClick={() => console.log(inputsValue)}>Get values</button>
+        <Button text="Get values" onClick={() => console.log(inputsValue)} />
+        <Button text="Open modal" onClick={() => setModal(true)} />
+        <Modal
+          onSuccess={() => {
+            alert("Success");
+            setModal(false);
+          }}
+          isOpen={modal}
+          title="Moj prvi modal"
+          //kada unutar komponente pozovemo onClose callback ovdje će nam doći kod i izvršit će se sve što napišemo u tijelo arrow funkcije
+          onClose={() => setModal(false)}
+        >
+          Ovo je neki modal content
+        </Modal>
       </Container>
     </>
   );

@@ -1,10 +1,19 @@
+import { ButtonHTMLAttributes } from "react";
+
 type ButtonProps = {
   text: string;
   color?: "red" | "green" | "blue";
-};
+  //na ovaj način s & možemo extendati naš postoječi tip s nekim drugim
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({ text, color = "green" }: ButtonProps) => {
-  return <button className={`btn btn--${color}`}>{text}</button>;
+// ...props spreada nam attribude iz ButtonHTMLAttributes<HTMLButtonElement> klase
+const Button = ({ text, color = "green", ...props }: ButtonProps) => {
+  return (
+    //trebamo primjeniti ...props tamo gdje želimo prosljediti atribute iz typa ButtonHTMLAttributes<HTMLButtonElement>
+    <button className={`btn btn--${color}`} {...props}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;
