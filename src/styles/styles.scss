@@ -10,15 +10,20 @@ body {
   //colors
   --color-white: #fff;
   --color-black: #333;
+  --color-gray-100: #f1f1f1;
   --color-gray-300: #ccc;
   --color-gray-500: #999;
+  --color-gray-800: #4b4b4b;
   --color-gray-800-25: rgba(75, 75, 75, 0.25);
+  --color-gray-900: #222222;
   --color-red-500: #c0392b;
   --color-red-600: #aa2a1c;
   --color-green-500: #27ae60;
   --color-green-600: #158f48;
   --color-blue-500: #2980b9;
   --color-blue-500: #136297;
+  --color-orange-200: #ffddb8;
+  --color-orange-500: #fd9e35;
 
   //border
   --border-rounded: 0.5rem;
@@ -27,5 +32,8 @@ body {
 @import "./components/btn.scss";
 @import "./components/container.scss";
 @import "./components/devider.scss";
+@import "./components/field.scss";
+@import "./components/header.scss";
 @import "./components/input.scss";
 @import "./components/modal.scss";
+@import "./components/no-match.scss";
