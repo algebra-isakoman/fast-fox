@@ -4,16 +4,19 @@
 
 body {
   margin: 0;
+  font-family: "Kablammo", cursive;
 }
 
 :root {
   //colors
   --color-white: #fff;
+  --color-white-35: rgba(255, 255, 255, 0.35);
   --color-black: #333;
   --color-gray-100: #f1f1f1;
   --color-gray-300: #ccc;
   --color-gray-500: #999;
   --color-gray-800: #4b4b4b;
+  --color-gray-900: #303030;
   --color-gray-800-25: rgba(75, 75, 75, 0.25);
   --color-gray-900: #222222;
   --color-red-500: #c0392b;
@@ -37,3 +40,4 @@ body {
 @import "./components/input.scss";
 @import "./components/modal.scss";
 @import "./components/no-match.scss";
+@import "./components/sidebar.scss";
