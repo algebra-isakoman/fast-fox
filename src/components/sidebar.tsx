@@ -26,7 +26,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     <div className={`sidebar ${isOpen ? "isActive" : ""}`}>
       {linkList.map((link) => {
         return (
-          <div className="sidebar__link__wrapper">
+          <div key={link.path} className="sidebar__link__wrapper">
             <NavLink
               key={link.path}
               onClick={onClose}

@@ -32,6 +32,7 @@ body {
   --border-rounded: 0.5rem;
 }
 
+//components
 @import "./components/btn.scss";
 @import "./components/container.scss";
 @import "./components/devider.scss";
@@ -40,4 +41,8 @@ body {
 @import "./components/input.scss";
 @import "./components/modal.scss";
 @import "./components/no-match.scss";
+@import "./components/progress-bar.scss";
 @import "./components/sidebar.scss";
+
+//pages
+@import "./page/progress-bar.scss";

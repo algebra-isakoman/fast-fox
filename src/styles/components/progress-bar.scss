@@ -1,0 +1,60 @@
+@keyframes gradient-move {
+  0% {
+    left: calc(-100% + 0px);
+  }
+  100% {
+    left: calc(-100% + 46px);
+  }
+}
+@keyframes progress-finish {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.1, 1.5, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.progressbar {
+  height: 2rem;
+  width: 100%;
+  background-color: var(--color-gray-100);
+  border-radius: var(--border-rounded);
+  overflow: hidden;
+  border: 2px solid var(--color-gray-500);
+  box-shadow: 0 0.25rem 1rem -0.25rem var(--color-gray-500);
+  transition: all 250ms ease-in-out;
+  &__block {
+    position: relative;
+    width: 0;
+    height: 2rem;
+    overflow: hidden;
+    box-shadow: -1.125rem 0 1rem 1rem var(--color-gray-800);
+    transition: all 250ms ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--color-green-500),
+        var(--color-green-500) 1rem,
+        var(--color-green-600) 1rem,
+        var(--color-green-600) 2rem
+      );
+      animation: gradient-move 1s linear infinite;
+    }
+  }
+  &--finished {
+    border-color: var(--color-green-500);
+    animation: progress-finish 0.75s ease-in-out;
+    box-shadow: 0 0 1.5rem 0.1rem var(--color-green-500);
+  }
+}

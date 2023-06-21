@@ -6,6 +6,11 @@
   cursor: pointer;
   transition: all 250ms ease-in-out;
 
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   &--green {
     background-color: var(--color-green-500);
     &:hover {
