@@ -1,0 +1,53 @@
+.select {
+  position: relative;
+  width: 20rem;
+
+  &__action {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-rounded);
+    cursor: pointer;
+    user-select: none;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 0.5rem;
+      transform: translateY(-50%);
+      transition: all 250ms ease-in-out;
+    }
+
+    &.isActive {
+      svg {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    width: 20rem;
+    padding: 1rem 0.5rem;
+    background-color: var(--color-gray-100);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-rounded);
+
+    &__item {
+      margin-bottom: 0.25rem;
+      user-select: none;
+      padding: 0.5rem;
+      transition: all 250ms ease-in-out;
+      border-radius: var(--border-rounded);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--color-white);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

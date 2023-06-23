@@ -20,7 +20,7 @@ const ProgressBarPage = () => {
     <Container>
       <h1>Progress bar</h1>
       <Devider />
-      <div className="progresspage__docs">
+      <div className="progresspage__docs type--san-serif type--lg">
         <p>ProgressBar komponenta ima 2 moguča propa.</p>
         <ul>
           <li>

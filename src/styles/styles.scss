@@ -30,6 +30,7 @@ body {
 
   //border
   --border-rounded: 0.5rem;
+  --border-circle: 1000rem;
 }
 
 //components
@@ -39,10 +40,15 @@ body {
 @import "./components/field.scss";
 @import "./components/header.scss";
 @import "./components/input.scss";
+@import "./components/loader.scss";
 @import "./components/modal.scss";
 @import "./components/no-match.scss";
 @import "./components/progress-bar.scss";
+@import "./components/select.scss";
 @import "./components/sidebar.scss";
 
 //pages
 @import "./page/progress-bar.scss";
+
+//utils
+@import "./utils/type.scss";
