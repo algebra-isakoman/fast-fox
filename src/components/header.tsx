@@ -13,6 +13,10 @@ const headerLinks: LinkType[] = [
     label: "Home",
   },
   {
+    path: "/animals",
+    label: "Animals",
+  },
+  {
     path: "/contact",
     label: "Kontakt",
   },

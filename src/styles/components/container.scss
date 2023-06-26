@@ -2,7 +2,7 @@
   margin: 0 auto;
   padding: 0 1rem;
 
-  @media (min-width: 37.5em) {
+  @media (min-width: $media-sm) {
     padding: 0 2rem;
   }
 

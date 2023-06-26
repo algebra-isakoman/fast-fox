@@ -27,14 +27,21 @@ body {
   --color-blue-500: #136297;
   --color-orange-200: #ffddb8;
   --color-orange-500: #fd9e35;
+  --color-orange-600: #da801a;
 
   //border
   --border-rounded: 0.5rem;
   --border-circle: 1000rem;
 }
 
+//responsive breakpoints
+$media-sm: 37.5em;
+$media-md: 53em;
+$media-lg: 64em;
+
 //components
 @import "./components/btn.scss";
+@import "./components/card.scss";
 @import "./components/container.scss";
 @import "./components/devider.scss";
 @import "./components/field.scss";
@@ -43,6 +50,7 @@ body {
 @import "./components/loader.scss";
 @import "./components/modal.scss";
 @import "./components/no-match.scss";
+@import "./components/pagination.scss";
 @import "./components/progress-bar.scss";
 @import "./components/select.scss";
 @import "./components/sidebar.scss";
@@ -51,4 +59,5 @@ body {
 @import "./page/progress-bar.scss";
 
 //utils
+@import "./utils/grid.scss";
 @import "./utils/type.scss";
