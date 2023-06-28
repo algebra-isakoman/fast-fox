@@ -27,5 +27,13 @@
       color: var(--color-gray-900);
       border-color: var(--color-orange-600);
     }
+    &.isDisabled {
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+    }
+    svg {
+      display: block;
+    }
   }
 }
