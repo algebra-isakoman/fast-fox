@@ -22,9 +22,6 @@ const Modal = ({ children, title, isOpen, onClose, onSuccess }: ModalProps) => {
     } else {
       bodyElement.style.overflow = "auto";
     }
-    return () => {
-      console.log("test");
-    };
     //Svaki puta kad se isOpen prop promjeni nama će se useEffect ponovo okinuti
   }, [isOpen]);
 
