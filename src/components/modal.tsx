@@ -9,9 +9,17 @@ type ModalProps = {
   //pošto nam onClose i onSuccess ne trebaju vracati nikakav podatak, možemo zagrade ostaviti prazne to znaci da ćemo dobiti samo callback bez podatka
   onClose: () => void;
   onSuccess?: () => void;
+  size?: "lg" | "sm";
 };
 
-const Modal = ({ children, title, isOpen, onClose, onSuccess }: ModalProps) => {
+const Modal = ({
+  children,
+  title,
+  isOpen,
+  onClose,
+  onSuccess,
+  size = "lg",
+}: ModalProps) => {
   useEffect(() => {
     const bodyElement = document.getElementsByTagName(
       "body"
@@ -31,7 +39,7 @@ const Modal = ({ children, title, isOpen, onClose, onSuccess }: ModalProps) => {
       {isOpen && (
         <div>
           <div className="modal__overlay" onClick={() => onClose()}></div>
-          <div className="modal">
+          <div className={`modal ${size === "sm" ? "modal--sm" : ""}`}>
             <div className="modal__header">
               <div className="modal__header__title">{title}</div>
               {/* Pošto ne prosljeđujemo nikakav podatak kroz callback možemo ga pisati skračeno bez arrow funkcije */}

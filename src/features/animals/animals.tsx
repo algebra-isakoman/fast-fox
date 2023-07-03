@@ -9,6 +9,8 @@ import { OptionType } from "../select/select-page";
 import FloatingButton from "../../components/floating-button";
 import { Link, useNavigate } from "react-router-dom";
 import { dataHeaders } from "./animal-create";
+import Modal from "../../components/modal";
+import Button from "../../components/button";
 
 export type AnimalType = {
   id: string;
@@ -41,6 +43,7 @@ const Animals = () => {
   //rows per page (limit koliko itema vidimo od jednom)
   const [rpp, setRpp] = useState<number>(8);
   const [noOfItems, setNoOfItems] = useState<number>(0);
+  const [modalOpen, setModalOpen] = useState<string | null>(null);
 
   const navigate = useNavigate();
 
@@ -121,7 +124,7 @@ const Animals = () => {
         {animals.map((animal) => {
           return (
             <AnimalCard
-              onDelete={(id: string) => handleDelete(id)}
+              onDelete={(id: string) => setModalOpen(id)}
               key={animal.name}
               animal={animal}
             />
@@ -135,6 +138,20 @@ const Animals = () => {
       />
 
       <FloatingButton onClick={() => navigate("/animals/new")} />
+      <Modal
+        size="sm"
+        isOpen={modalOpen ? true : false}
+        onClose={() => setModalOpen(null)}
+        title="Jeste li sigurni da želite obrisati?"
+        onSuccess={() => {
+          if (modalOpen) {
+            handleDelete(modalOpen);
+            setModalOpen(null);
+          }
+        }}
+      >
+        Ako obrišete životinju više je necemo moci vratiti.
+      </Modal>
     </Container>
   );
 };

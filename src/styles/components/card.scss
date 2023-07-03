@@ -2,6 +2,7 @@
   padding: 1rem;
   background-color: var(--color-gray-100);
   border-radius: var(--border-rounded);
+
   &__header {
     display: flex;
     align-items: center;
@@ -11,8 +12,34 @@
       height: 3.5rem;
       border-radius: var(--border-circle);
       margin-right: 0.5rem;
+      display: block;
+      transition: all 250ms ease-in-out;
+
+      &-wrapper {
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+          .card__header__img {
+            filter: brightness(0.6) blur(2px);
+          }
+          svg {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    & svg {
+      transition: all 250ms ease-in-out;
+      display: block;
+      position: absolute;
+      top: 1rem;
+      left: 1.1rem;
+      opacity: 0;
+      color: var(--color-white);
     }
   }
+
   &__title {
     font-size: 1.25rem;
     margin-bottom: 0.25rem;
@@ -35,5 +62,28 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    color: var(--color-red-500);
+    font-weight: bold;
+    cursor: pointer;
+    flex-grow: 1;
+    align-items: flex-end;
+
+    &:hover {
+      color: var(--color-red-600);
+    }
+    svg {
+      display: block;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &--animal {
+    display: flex;
+    flex-direction: column;
   }
 }

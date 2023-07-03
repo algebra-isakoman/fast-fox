@@ -3,6 +3,9 @@ import imgDiet from "./../../assets/images/diet.png";
 import imgClass from "./../../assets/images/animal-class.png";
 import imgHabitat from "./../../assets/images/habitat.png";
 import Button from "../../components/button";
+import { useNavigate } from "react-router-dom";
+import IconDelete from "../../assets/icons/delete";
+import IconEdit from "../../assets/icons/edit";
 
 type AnimalCardProps = {
   animal: AnimalType;
@@ -11,19 +14,26 @@ type AnimalCardProps = {
 
 const AnimalCard = ({ animal, onDelete }: AnimalCardProps) => {
   const { name, animalClass, diet, species, habitat, id } = animal;
+  const navigate = useNavigate();
 
   return (
-    <div className="card">
+    <div className="card card--animal">
       <div className="card__header">
-        <img
-          className="card__header__img"
-          width={"100%"}
-          src={`https://source.unsplash.com/random/500x500/?${animal.name.replace(
-            " ",
-            "-"
-          )}`}
-          alt="Image of an animal"
-        />
+        <div
+          className="card__header__img-wrapper"
+          onClick={() => navigate(`/animals/${id}`)}
+        >
+          <img
+            className="card__header__img"
+            width={"100%"}
+            src={`https://source.unsplash.com/random/500x500/?${animal.name.replace(
+              " ",
+              "-"
+            )}`}
+            alt="Image of an animal"
+          />
+          <IconEdit />
+        </div>
         <div>
           <div className="card__title">{name}</div>
           <div className="card__subtitle">{species}</div>
@@ -41,7 +51,10 @@ const AnimalCard = ({ animal, onDelete }: AnimalCardProps) => {
         <img src={imgHabitat} alt="icon of animal habitat" />
         <span>{habitat}</span>
       </div>
-      <Button text="Delete" color="red" onClick={() => onDelete(id)} />
+      <div className="card__btn" onClick={() => onDelete(id)}>
+        <IconDelete />
+        <span>Delete</span>
+      </div>
     </div>
   );
 };
